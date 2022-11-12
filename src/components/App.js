@@ -1,43 +1,50 @@
-import React from 'react';
-import './App.css';
-import Home from './Home';
-import Parks from './Parks';
-import Community from './Community';
-import Help from './Help';
-import {NavLink, BrowserRouter as Router, Route, Routes} from 'react-router-dom';
+import React from "react";
+import "./App.css";
+import Home from "./Home";
+import Parks from "./Parks";
+import Community from "./Community";
+import Help from "./Help";
+import SignIn from "./SignIn";
+import Account from "./Account";
+import PrivateRoute from "./PrivateRoute";
+import Navigation from "./Navigation";
+import { AuthContext } from "../firebase/Auth";
+import SignOutButton from "./SignOutButton";
+import SignUp from "./SignUp";
+import {
+  NavLink,
+  BrowserRouter as Router,
+  Route,
+  Routes,
+} from "react-router-dom";
+import { AuthProvider } from "../firebase/Auth";
 
 function App() {
   return (
-     <Router>
-       <div className="App">
-        <header className='App-header'>
-            <NavLink to="/">
-              <h1 className='App-title'>
-                Hoboken Parks Portal 
-              </h1>
-            </NavLink>
-            <nav>
-              <NavLink className='navlink' to='/parks'>
-                Parks
-              </NavLink>
-              <NavLink className='navlink' to='/community'>
-                Community
-              </NavLink>
-              <NavLink className='navlink' to='/help'>
-                Help
-              </NavLink>
-            </nav>
-          </header>
-          <div className = 'App-body'>
+    <AuthProvider>
+      <Router>
+        <div className="App">
+          <Navigation />
+          <div className="App-body">
             <Routes>
-              <Route path ='/' element = {<Home />} />
-              <Route path ='/parks' element = {<Parks />} />
-              <Route path ='/community' element = {<Community />} />
-              <Route path ='/help' element = {<Help />} />
+              <Route path="/" element={<Home />} />
+              <Route path="/signup" element={<SignUp />} />
+              <Route path="/parks" element={<PrivateRoute />}>
+                <Route path="/parks" element={<Home />} />
+              </Route>
+              <Route path="/community" element={<PrivateRoute />}>
+                <Route path="/community" element={<Community />} />
+              </Route>
+              {/* <Route path="/help" element={<Help />} /> */}
+              <Route path="/signIn" element={<SignIn />} />
+              <Route path="/account" element={<PrivateRoute />}>
+                <Route path="/account" element={<Account />} />
+              </Route>
             </Routes>
           </div>
-       </div>
-    </Router>
+        </div>
+      </Router>
+    </AuthProvider>
   );
 }
 
