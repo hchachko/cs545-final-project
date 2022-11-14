@@ -15,7 +15,7 @@ const NavigationAuth = () => {
         <h1 className="App-title">Hoboken Parks Portal</h1>
       </NavLink>
       <nav>
-        <NavLink className="navlink" to="/">
+        <NavLink className="navlink" to="/parks">
           Parks
         </NavLink>
         <NavLink className="navlink" to="/community">
@@ -40,9 +40,6 @@ const NavigationNonAuth = () => {
         <h1 className="App-title">Hoboken Parks Portal</h1>
       </NavLink>
       <nav>
-        <NavLink className="navlink" to="/">
-          Parks
-        </NavLink>
         <NavLink className="navlink" id="corner" to="/signIn">
           Sign In
         </NavLink>
