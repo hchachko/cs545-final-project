@@ -27,7 +27,7 @@ function SignUp() {
   };
 
   if (currentUser) {
-    return <Navigate to="/" />;
+    return <Navigate to="/parks" />;
   }
 
   return (
