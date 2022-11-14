@@ -41,7 +41,7 @@ const NavigationNonAuth = () => {
       </NavLink>
       <nav>
         <NavLink className="navlink" to="/">
-          Home
+          Parks
         </NavLink>
         <NavLink className="navlink" id="corner" to="/signIn">
           Sign In
