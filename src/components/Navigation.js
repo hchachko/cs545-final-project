@@ -16,9 +16,6 @@ const NavigationAuth = () => {
       </NavLink>
       <nav>
         <NavLink className="navlink" to="/">
-          Home
-        </NavLink>
-        <NavLink className="navlink" to="/parks">
           Parks
         </NavLink>
         <NavLink className="navlink" to="/community">
