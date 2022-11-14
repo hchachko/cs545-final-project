@@ -120,6 +120,16 @@ select {
 	width: 50%;
 	margin: 0 auto 20px;
 }
+.parkCard {
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	width: 85%;
+	margin: 0 auto 20px;
+}
+.homeCard {
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	width: 95%;
+	margin: 20px;
+}
 
 .cancel-button {
 	position: absolute;
@@ -133,4 +143,12 @@ select {
 }
 span {
 	font-weight: bold;
+}
+.parkImg {
+	width: 60%;
+	height: 60%
+}
+.mapImg {
+	width: 75%;
+	height: 75%
 }

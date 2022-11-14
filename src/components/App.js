@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
 import Home from "./Home";
-import Parks from "./Parks";
+import Parks from "./ParkPage";
 import Community from "./Community";
 import Help from "./Help";
 import SignIn from "./SignIn";
@@ -29,8 +29,7 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/signup" element={<SignUp />} />
-              <Route path="/parks" element={<PrivateRoute />}>
-                <Route path="/parks" element={<Home />} />
+              <Route path="/" element={<PrivateRoute />}>
               </Route>
               <Route path="/community" element={<PrivateRoute />}>
                 <Route path="/community" element={<Community />} />

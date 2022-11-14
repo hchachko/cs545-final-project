@@ -1,11 +1,12 @@
 import React from "react";
 import { doSignOut } from "../firebase/FirebaseFunctions";
+import { NavLink } from "react-router-dom";
 
 const SignOutButton = () => {
   return (
-    <button type="button" onClick={doSignOut}>
+    <NavLink className="navlink"onClick={doSignOut}>
       Sign Out
-    </button>
+    </NavLink>
   );
 };
 
