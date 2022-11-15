@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { Grid} from '@mui/material';
 import hobokenMap from './Images/hobokenMap.png';
 import axios from 'axios';
-
+import {Link} from 'react-router-dom';
 function Home () {
     const [parksData, setParksData] = useState(undefined);
     let parks;
@@ -21,32 +21,33 @@ function Home () {
     }, []);
     parks = parksData && parksData.map((park) => {
         console.log(park);
+        let parkUrl = "/parks/"+park._id;
         return (
             <div className='parkCard' key = {park._id}>
-                 <div className='card-body'>
-                    <h5 className='card-title'>{park.parkName}</h5>
-                    <br/>
-                    <img className= "parkImg" src={park.parkImg} alt="park"></img>
-                </div>
+                 <Link to={parkUrl}>
+                    <div className='card-body'>
+                        <h4 className='card-title'>{park.parkName}</h4>
+                        <img className= "parkImg" src={park.parkImg} alt="park"></img>
+                    </div>
+                </Link>
             </div>
         );
     });
     return (
         <div>
-            <Grid container spacing={2}>
+            <Grid container spacing={1}>
             <Grid item xs={4} key="Parks">
-                <div className='homeCard'>
+                <div className='parksCard'>
                     <div className='card-body'>
+                        <h3>List of Hoboken Parks:</h3>
                         {parks}
                     </div>
                 </div>
             </Grid>
             <Grid item xs={8} key="Hoboken_Map">
-                <div className='homeCard'>
+                <div className='mapCard'>
                     <div className='card-body'>
-                        <h5 className='card-title'>
-                            Hoboken Map:
-                        </h5>
+                        <h2 className='card-title'> Hoboken Map: </h2>
                         <img src={hobokenMap} alt="Map" className = "mapImg"></img>
                         <br />
                     </div>

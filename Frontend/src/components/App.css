@@ -118,19 +118,30 @@ select {
 .card {
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 	width: 50%;
-	margin: 0 auto 20px;
+	margin: 20px auto 20px;
+}
+.parkPageCard {
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	width: 50%;
+	margin: 20px auto 20px;
 }
 .parkCard {
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-	width: 85%;
-	margin: 0 auto 20px;
+	width: 95%;
+	margin: 20px auto 20px;
 }
-.homeCard {
+.parksCard {
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	width: 75%;
+	margin: 20px auto 20px;
+	height: 750px; 
+    overflow-y: scroll;
+}
+.mapCard {
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 	width: 95%;
-	margin: 20px;
+	margin: 20px auto 20px;
 }
-
 .cancel-button {
 	position: absolute;
 	right: 20px;

@@ -2,6 +2,7 @@ import React from "react";
 import "./App.css";
 import Home from "./Home";
 import Parks from "./Parks";
+import ParkPage from "./ParkPage";
 import Community from "./Community";
 import Help from "./Help";
 import SignIn from "./SignIn";
@@ -36,6 +37,9 @@ function App() {
               </Route>
               <Route path="/parks" element={<PrivateRoute />}>
                 <Route path="/parks" element={<Parks />} />
+              </Route>
+              <Route path="/parks/:id" element={<PrivateRoute />}>
+                <Route path="/parks/:id" element={<ParkPage />} />
               </Route>
               {/* <Route path="/help" element={<Help />} /> */}
               <Route path="/signIn" element={<SignIn />} />
