@@ -15,7 +15,7 @@ In a console window:
 
 In a seperate console window:
 
-6) cd to the "Frontend directory"
+6) cd to the "Frontend" directory.
 
 7) Run "npm install" to install the dependicies needed for the frontend.
 
