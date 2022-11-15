@@ -1,7 +1,7 @@
 # cs545-final-project
 # How to compile:
 
-1) Have mongodb running
+1) Have mongodb running (either manually or as a background process).
 
 In a console window:
 
