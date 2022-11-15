@@ -3,7 +3,7 @@
 
 1) Have mongodb running (either manually or as a background process).
 
-In a console window:
+&emsp; In a console window:
 
 2) cd to the "Server" directory.
 
@@ -13,7 +13,7 @@ In a console window:
 
 5) Run "npm start" to start the backend server on port 4000. 
 
-In a seperate console window:
+&emsp; In a seperate console window:
 
 6) cd to the "Frontend" directory.
 
