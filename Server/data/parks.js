@@ -28,7 +28,7 @@ const exportedMethods = {
         return park;
     },
 
-    async addPark(parkName, parkImg, parkDesc) {
+    async addPark(parkName, parkImg, parkAddress) {
         if (arguments.length != 3) throw 'Usage: addPark(parkName, parkImg, parkDesc)';
 
         const parkCollection = await parks();
@@ -36,7 +36,7 @@ const exportedMethods = {
             _id: new ObjectId(),
             parkName: parkName,
             parkImg: parkImg,
-            parkDesc: parkDesc
+            parkAddress: parkAddress
         };
         const insertInfo = await parkCollection.insertOne(newPark);
         if (insertInfo.insertedCount === 0) throw "Could not add park";
