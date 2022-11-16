@@ -123,17 +123,20 @@ select {
 }
 
 .card {
+	border-radius: 20px;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 	width: 50%;
 	margin: 20px auto 20px;
 }
 .searchCard {
+	border-radius: 20px 20px 0px 0px;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 	width: 75%;
 	height: 15%;
 	margin: 20px auto 0px auto;
 }
 .parkPageCard {
+	border-radius: 20px;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 	width: 50%;
 	margin: 20px auto 20px;
@@ -141,9 +144,11 @@ select {
 .parkCard {
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 	width: 95%;
+	border-radius: 20px;
 	margin: 20px auto 20px;
 }
 .parksCard {
+	border-radius: 0px 0px 20px 20px;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 	width: 75%;
 	margin: 0px auto 20px;
@@ -151,6 +156,7 @@ select {
     overflow-y: scroll;
 }
 .mapCard {
+	border-radius: 20px;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 	width: 95%;
 	margin: 20px auto 20px;
