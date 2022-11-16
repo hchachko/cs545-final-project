@@ -36,7 +36,8 @@ function SignIn() {
     return <Navigate to="/" />;
   }
   return (
-    <div>
+    <div className="card">
+      <div></div>
       <h1>Log in</h1>
       <form onSubmit={handleLogin}>
         <div className="form-group">

@@ -10,9 +10,10 @@ const useStyles = makeStyles({
     height: "60vh",
     marginLeft: "auto",
     marginRight: "auto",
-    borderRadius: 5,
-    border: "1px solid black",
-    boxShadow: "0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);",
+    borderRadius: 20,
+    // border: "1px solid black",
+    boxShadow:
+      "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);",
     backgroundColor: "white",
     margin: "2.5%",
   },
