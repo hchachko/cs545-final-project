@@ -75,11 +75,17 @@ function Home () {
     return (
         <div className='card' key="Park_1">
             <div className='card-body'>
-                <h5 className='card-title'>
-                    Hoboken Map:
-                </h5>
+                <h2 className='card-title'>
+                    What's our app about?
+                </h2>
                 <br />
-                    <MapContainer/>
+                    <p>
+                        Our project Hoboken Parks Portal, includes a dedicated platform for users to easily
+                        find public parks in the Hoboken area that fit their individual needs. It also allows
+                        users to discuss the merits of individual parks in a forum. We collect user data on
+                        what each user prefers when looking for a park in a UI/UX that is intuitive and minimizes
+                        time to learn how to use the app.
+                      </p>
                 <br />
             </div>
         </div>
