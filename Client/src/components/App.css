@@ -91,6 +91,7 @@ nav {
 	border-radius: 3px;
 	color: white;
 	text-decoration: none !important;
+	border: 1px solid black
 }
 .buttonAccount {
 	padding: 0.4rem .8rem;
