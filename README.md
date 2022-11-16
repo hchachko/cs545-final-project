@@ -7,7 +7,7 @@
 
 2) cd to the "Server" directory.
 
-3) Run "npm install" to install the dependicies needed for the backend.
+3) Run "npm install" to install the dependicies needed for the server.
 
 4) Run "npm run seed". This will populate the mongo server with seed data.
 
@@ -15,10 +15,10 @@
 
 &emsp; In a seperate console window:
 
-6) cd to the "Frontend" directory.
+6) cd to the "Client" directory.
 
-7) Run "npm install" to install the dependicies needed for the frontend.
+7) Run "npm install" to install the dependicies needed for the client.
 
-8) Run "npm start" to start the frontend on port 3000. 
+8) Run "npm start" to start the frontend client on port 3000. 
 
-**It is crucial to run both the backend and the frontend at the same time for the site to function properly!**
+**It is crucial to run both the server and the client at the same time for the site to function properly!**
