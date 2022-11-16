@@ -3,7 +3,7 @@
 
 1) Have mongodb running (either manually or as a background process).
 
-&emsp; Set up nodebb
+&emsp; Set up nodebb. If Nodebb already set up, only run steps 3 and 5, then go to step 14
 
 2) Run "git clone -b v2.x https://github.com/NodeBB/NodeBB.git nodebb"
 
@@ -34,7 +34,7 @@
 
 13) Hit the save icon in the bottom left. Close the page.
 
-&emsp; In a console window:
+&emsp; In a seperate console window:
 
 14) cd to the "Server" directory.
 
@@ -53,3 +53,9 @@
 20) Run "npm start" to start the frontend on port 3000. 
 
 **It is crucial to run both the backend and the frontend at the same time for the site to function properly!**
+
+
+**DISCLAIMER**
+
+Parts of the community tab have been taken from, and inspired by, code provided publicly at
+https://medium.com/@samwsoftware/building-a-forum-with-react-and-node-242a2a3c2995 
