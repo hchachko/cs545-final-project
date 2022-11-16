@@ -131,9 +131,9 @@ select {
 .searchCard {
 	border-radius: 20px 20px 0px 0px;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-	width: 75%;
+	width: 95%;
 	height: 15%;
-	margin: 20px auto 0px auto;
+	margin: 2.5% 2.5% 0% 2.5%;
 }
 .parkPageCard {
 	border-radius: 20px;
@@ -150,8 +150,8 @@ select {
 .parksCard {
 	border-radius: 0px 0px 20px 20px;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-	width: 75%;
-	margin: 0px auto 20px;
+	width: 95%;
+	margin: 0% 2.5% 2.5% 2.5%;
 	height: 750px; 
     overflow-y: scroll;
 }
@@ -159,7 +159,8 @@ select {
 	border-radius: 20px;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 	width: 95%;
-	margin: 20px auto 20px;
+	height: 700px;
+	margin: 1.25% 1.25% 1.25% 0%;
 }
 .cancel-button {
 	position: absolute;
@@ -175,6 +176,7 @@ span {
 	font-weight: bold;
 }
 .parkImg {
+	border-radius: 20px;
 	width: 60%;
 	height: 60%
 }
