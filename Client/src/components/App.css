@@ -92,6 +92,13 @@ nav {
 	color: white;
 	text-decoration: none !important;
 }
+.buttonAccount {
+	padding: 0.4rem .8rem;
+	border-radius: 3px;
+	color: white;
+	text-decoration: none !important;
+}
+
 
 .button:hover {
 	padding: 0.4rem 0.8rem;
