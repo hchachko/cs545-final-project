@@ -29,7 +29,7 @@ function Parks () {
                 <h2 className='card-title'>
                     {parkName}
                 </h2>
-                <img src={parkImg} alt="Park img" width="400" height="400"></img>
+                <img src={parkImg} alt="Park img" className = "parkImg"></img>
                 <br />
                 <h3>Address:</h3>
                 <h4>{parkAddress}</h4>
