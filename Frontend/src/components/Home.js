@@ -3,7 +3,7 @@ import './App.css';
 import {BrowserRouter as Router, Route, Link, Routes, useLocation} from 'react-router-dom';
 import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
 
-const MapContainer = () => {
+export const MapContainer = () => {
   
   const mapStyles = {        
     height: "50vh",
