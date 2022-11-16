@@ -87,7 +87,12 @@ function SignUp() {
             />
           </label>
         </div>
-        <button id="submitButton" name="submitButton" type="submit">
+        <button
+          id="submitButton"
+          name="submitButton"
+          className="button"
+          type="submit"
+        >
           Sign Up
         </button>
       </form>

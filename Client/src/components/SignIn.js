@@ -65,9 +65,11 @@ function SignIn() {
             />
           </label>
         </div>
-        <button type="submit">Log in</button>
+        <button type="submit" className="button">
+          Log in
+        </button>
 
-        <button className="forgotPassword" onClick={passwordReset}>
+        <button className="button" onClick={passwordReset}>
           Forgot Password
         </button>
       </form>
