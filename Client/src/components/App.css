@@ -132,7 +132,7 @@ select {
 	border-radius: 20px 20px 0px 0px;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 	width: 95%;
-	height: 15%;
+	height: 20%;
 	margin: 2.5% 2.5% 0% 2.5%;
 }
 .parkPageCard {
@@ -159,7 +159,7 @@ select {
 	border-radius: 20px;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 	width: 95%;
-	height: 700px;
+	height: 93vh;
 	margin: 1.25% 1.25% 1.25% 0%;
 }
 .cancel-button {
@@ -187,4 +187,9 @@ span {
 
 input {
 	border-radius: 10px;
+	width: 50%;
+}
+
+h4 {
+	font-size: 100%;
 }
