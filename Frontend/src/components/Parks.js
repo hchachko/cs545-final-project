@@ -4,6 +4,7 @@ import { Grid} from '@mui/material';
 import hobokenMap from './Images/hobokenMap.png';
 import axios from 'axios';
 import {Link} from 'react-router-dom';
+import {MapContainer} from './Home';
 function Home () {
     const [parksData, setParksData] = useState(undefined);
     const [formData, setFormData] = useState({searchTerm: ''});
@@ -73,7 +74,7 @@ function Home () {
                 <div className='mapCard'>
                     <div className='card-body'>
                         <h2 className='card-title'> Hoboken Map: </h2>
-                        <img src={hobokenMap} alt="Map" className = "mapImg"></img>
+                        <MapContainer/>
                         <br />
                     </div>
                 </div>
