@@ -32,25 +32,39 @@
 
 12) For "Access-Control-Allow-Origin Regular Expression", enter ".+"
 
-13) Hit the save icon in the bottom left. Close the page.
+13) Hit the save icon in the bottom left. 
+
+14) From the Settings dropdown, select "API Access"
+
+15) Select "Create Token
+    - Set the User ID to 0, optionally give it a description
+    - Select "Confirm"
+
+16) Hit the Save icon in the bottom left. 
+
+17) If it doesn't already exist, create a .secrets file in the Client Directory
+
+18) In .secrets, place REACT_APP_NODEBB_MASTER_TOKEN="token", replacing token with the newly generated token. Copy .secrets to the Server directory
+
+19) Close the NodeBB config page
 
 &emsp; In a seperate console window:
 
-14) cd to the "Server" directory.
+20) cd to the "Server" directory.
 
-15) Run "npm install" to install the dependicies needed for the backend.
+21) Run "npm install" to install the dependicies needed for the backend.
 
-16) Run "npm run seed". This will populate the mongo server with seed data.
+22) Run "npm run seed". This will populate the mongo server with seed data.
 
-17) Run "npm start" to start the backend server on port 4000. 
+23) Run "npm start" to start the backend server on port 4000. 
 
 &emsp; In a seperate console window:
 
-18) cd to the "Frontend" directory.
+24) cd to the "Client" directory.
 
-19) Run "npm install" to install the dependicies needed for the frontend.
+25) Run "npm install" to install the dependicies needed for the frontend.
 
-20) Run "npm start" to start the frontend on port 3000. 
+26) Run "npm start" to start the frontend on port 3000. 
 
 **It is crucial to run both the backend and the frontend at the same time for the site to function properly!**
 
