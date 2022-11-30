@@ -1,0 +1,53 @@
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+.category {
+    width: auto;
+    margin: 10px 20px;
+    padding: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-width: 1px;
+	border-style: solid;
+	border-color: #28547a;
+    height: 200px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.category-icon {
+    height: 180px;
+    width: 180px;
+    display: block;
+    float: left;
+}
+
+.category-icon img {
+    height: 180px;
+    width: 180px;
+    border-radius: 100%;
+    display: inherit;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.category-name {
+    display: inline-block;
+    margin: 10px 50px;
+    padding: 0px 20px;
+    border-width: 1px;
+	border-style: solid;
+	border-color: #28547a;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    width: 1000px;
+    vertical-align: middle;
+}
+
+.category-name p {
+    display: inline;
+    font-size: 24px;
+}
