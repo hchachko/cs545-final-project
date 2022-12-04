@@ -1,29 +1,81 @@
-import React, { useState } from "react";
-import "./App.css";
+import React, { useContext } from "react";
+import SocialSignIn from "./SocialSignIn";
+import { Navigate } from "react-router-dom";
+import { AuthContext } from "../firebase/Auth";
 import {
-  BrowserRouter as Router,
-  Route,
-  Link,
-  Routes,
-  useLocation,
-} from "react-router-dom";
+  doSignInWithEmailAndPassword,
+  doPasswordReset,
+} from "../firebase/FirebaseFunctions";
 
-function Parks() {
+function SignIn() {
+  const { currentUser } = useContext(AuthContext);
+  const handleLogin = async (event) => {
+    event.preventDefault();
+    let { email, password } = event.target.elements;
+
+    try {
+      await doSignInWithEmailAndPassword(email.value, password.value);
+    } catch (error) {
+      alert(error);
+    }
+  };
+
+  const passwordReset = (event) => {
+    event.preventDefault();
+    let email = document.getElementById("email").value;
+    if (email) {
+      doPasswordReset(email);
+      alert("Password reset email was sent");
+    } else {
+      alert(
+        "Please enter an email address below before you click the forgot password link"
+      );
+    }
+  };
+  if (currentUser) {
+    return <Navigate to="/" />;
+  }
   return (
-    <div className="card" key="Park_1">
-      <div className="card-body">
-        <h5 className="card-title">Sign In</h5>
-        <br />
-        <img
-          src="https://cdn.britannica.com/82/117982-050-D4295893/Frank-Sinatra-Park-Hoboken-NJ.jpg"
-          alt="Park img"
-          width="400"
-          height="400"
-        ></img>
-        <br />
-      </div>
+    <div>
+      <h1>Log in</h1>
+      <form onSubmit={handleLogin}>
+        <div className="form-group">
+          <label>
+            Email:
+            <input
+              className="form-control"
+              name="email"
+              id="email"
+              type="email"
+              placeholder="Email"
+              required
+            />
+          </label>
+        </div>
+        <div className="form-group">
+          <label>
+            Password:
+            <input
+              className="form-control"
+              name="password"
+              type="password"
+              placeholder="Password"
+              autoComplete="off"
+              required
+            />
+          </label>
+        </div>
+        <button type="submit">Log in</button>
+
+        <button className="forgotPassword" onClick={passwordReset}>
+          Forgot Password
+        </button>
+      </form>
+
+      <br />
+      <SocialSignIn />
     </div>
   );
 }
 
-export default Parks;
+export default SignIn;

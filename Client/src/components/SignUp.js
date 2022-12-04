@@ -16,10 +16,11 @@ function SignUp() {
     }
 
     try {
+      console.log("FART", displayName.value);
       await doCreateUserWithEmailAndPassword(
         email.value,
         passwordOne.value,
-        displayName
+        displayName.value
       );
     } catch (error) {
       alert(error);

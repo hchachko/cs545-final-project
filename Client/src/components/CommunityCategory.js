@@ -13,6 +13,16 @@ class TopicForm extends Component {
         super(props);
         this.state = {name: "", post: ""}
     }
+    handleChange = ({ target }) => {
+        this.setState({ [target.name]: target.value})
+    }
+    render(){
+        return (
+            <div>
+                
+            </div>
+        )
+    }
 }
 
 function createTopic(){

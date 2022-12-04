@@ -21,13 +21,9 @@ const NavigationAuth = () => {
         <NavLink className="navlink" to="/community">
           Community
         </NavLink>
-        <NavLink className="navlink" id="corner" to="/signIn">
-          Sign In
-        </NavLink>
         <NavLink className="navlink" to="/account">
           Account
         </NavLink>
-        <SignOutButton />
       </nav>
     </header>
   );

@@ -7,7 +7,11 @@
 
 2) Run "git clone -b v2.x https://github.com/NodeBB/NodeBB.git nodebb"
 
+<<<<<<< HEAD
 3) Run "cd nodebb"
+=======
+3) Run "npm install" to install the dependicies needed for the server.
+>>>>>>> main
 
 4) Run "./nodebb setup"
     - Hit "Enter" Twice to select the default URL and secret
@@ -50,6 +54,7 @@
 
 &emsp; In a seperate console window:
 
+<<<<<<< HEAD
 20) cd to the "Server" directory.
 
 21) Run "npm install" to install the dependicies needed for the backend.
@@ -73,3 +78,12 @@
 
 Parts of the community tab have been taken from, and inspired by, code provided publicly at
 https://medium.com/@samwsoftware/building-a-forum-with-react-and-node-242a2a3c2995 
+=======
+6) cd to the "Client" directory.
+
+7) Run "npm install" to install the dependicies needed for the client.
+
+8) Run "npm start" to start the frontend client on port 3000. 
+
+**It is crucial to run both the server and the client at the same time for the site to function properly!**
+>>>>>>> main
