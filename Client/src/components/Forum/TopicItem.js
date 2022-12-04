@@ -8,17 +8,17 @@ class TopicItem extends Component {
       return (
           <li>
             <Link style={{textDecoration: 'none'}} to={"/community/topic/"+topicdata.tid+"/"+topicdata.title.replaceAll(" ", "-")}>
-              <div class="forum">
-                <div class="forum-icon">
+              <div className="forum">
+                <div className="forum-icon">
                   <img src={decode(this.props.data.backgroundImage)} alt=""></img>
                 </div>
-                <div class="forum-name">
+                <div className="forum-name">
                   <p>{topicdata.title}</p>
                 </div>1
-                <div class="forum-counts">
+                <div className="forum-counts">
                   <p>Total Posts: {topicdata.postcount}</p>
                 </div>
-                <div class="forum-creator">
+                <div className="forum-creator">
                   <p>Created by: {topicdata.user.username}</p>
                 </div>
               </div>

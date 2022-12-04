@@ -84,3 +84,47 @@ body {
     color: black;
 }
 
+.forum-post {
+    border-width: 1px;
+	border-style: solid;
+	border-color: #28547a;
+    border-radius: 5%;
+    width: 80%;
+    height: 80%;
+    font-size: 20px;
+    float: right;
+    margin: 0px 100px 0px 0px;
+    text-align: left;
+    padding: 10px;
+}
+
+.forum-post-creator {
+    width: 100px;
+    float: left;
+    padding: 0px 10px
+}
+
+#tname {
+    margin: 10px;
+}
+
+#sep {
+    height:0px;
+    width: 100%;
+}
+
+.forum-post-date {
+    display: flex;
+}
+
+#nav {
+    width: 100%;
+    align-content: center;
+    display: flex;
+}
+
+#nav nav {
+    align-self: center;
+    margin: 0px auto;
+    display: flex;
+}
