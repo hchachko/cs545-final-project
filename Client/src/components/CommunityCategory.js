@@ -1,59 +1,95 @@
-import React, {useState, Component} from 'react';
+import React, {useContext, Component, useState} from 'react';
 
 import './App.css';
 import './Forum/Forum.css'
-import {useParams} from 'react-router-dom';
-import {useAsync} from 'react-async';
+import {useParams, useSearchParams} from 'react-router-dom';
 
 import TopicItem from './Forum/TopicItem';
-import {getTopics} from './Forum/CommonAPI';
+import {getTopics, createTopic} from './Forum/CommonAPI';
+import Pagination from './Forum/Pagination';
 
-class TopicForm extends Component {
-    constructor(props){
-        super(props);
-        this.state = {name: "", post: ""}
+import { AuthContext } from "../firebase/Auth";
+
+function withParams(Component) {
+    return props => <Component {...props} params={useParams()} />;
+  }
+  
+
+function TopicForm({ cid }) {
+    
+    const { currentUser } = useContext(AuthContext);
+    const [shown, setShown] = useState(false);
+    let name, post;
+
+    const openForm = () => {
+        setShown(current => !current);
     }
-    handleChange = ({ target }) => {
-        this.setState({ [target.name]: target.value})
+
+    const submitTopic = async () => {
+        createTopic({name: name}, {post: post}, {cid: cid}, {user: currentUser}).then((value) => {
+            alert("successfully created topic")
+        }, (reason) => {
+            alert(`Failed to create topic: ${reason}`)
+        })
     }
-    render(){
-        return (
-            <div>
-                
-            </div>
-        )
+
+    const onChangeName = (event) => {
+        name = event.target.value
     }
-}
 
-function createTopic(){
+    const onChangePost = (event) => {
+        post = event.target.value
+    }
 
-}
-
-function Home () {
-    let {cid, name} = useParams();
-    let {data, error, isPending} = useAsync({promiseFn: getTopics, cid: cid, name: name});
-    name = name.replaceAll("-", " ");
-    if (isPending) return (
-        <h3>
-            "Loading topics, please wait..."
-        </h3>
-    );
-    if (error) return (
-        <h3>
-            "Failed to load topics: {error.message}"
-        </h3>
+    return (
+        <div id="topicCreate">
+            <button onClick={openForm}>Create Topic</button>
+            {shown && (<form id="tform">
+                <label htmlFor="name">Topic Name:</label>
+                <input type="text" id="tname" name="name" onChange={onChangeName}></input><br />
+                <textarea name="post" id="tpost" rows="10" cols="155" placeholder="Enter post content here..." onChange={onChangePost}>
+                </textarea>
+                <div id="sep"></div>
+                <button id="tsubmit" onClick={submitTopic} type="button">Submit</button>
+            </form>)}
+        </div>
     )
-    if (data) return (
+}
+
+class Home extends Component {
+    constructor(props) {
+        super(props);
+        const {cid, name} = this.props.params;
+        this.cid = cid
+        this.name = name
+        this.page = 1
+        this.state = {data: {topics: {}}, pages: 1};
+    }
+    updateData(page){
+        console.log(page)
+        getTopics({cid: this.cid}, {name: this.name}, {page: page.currentPage}).then(result => {
+            this.setState({data: result, pages: result.pagination.last.page});
+        })
+    }
+
+    componentDidMount(){
+        this.setState({data: {topics: {}}, pages: 1});
+        this.updateData({currentPage: this.page, totalPages: this.state.pages})
+    }
+
+    render(){
+        let updateDataBound = this.updateData.bind(this)
+        return (
         <div>
             <h1>Community</h1>
-            <h2>Welcome to the community board for {name}</h2>
-            <button onClick={createTopic}>Create Topic</button>
+            <h2>Welcome to the community board for {this.name.replaceAll("-", " ")}</h2>
+            <TopicForm cid={this.cid}></TopicForm>
             <ul>
-                {Object.keys(data.topics).map((key, i) => <TopicItem key={`${name}-topic-${i}`} data={data} dkey={key}/>)}
+                {Object.keys(this.state.data.topics).map((key, i) => <TopicItem key={`${this.name}-topic-${i}`} data={this.state.data} dkey={key}/>)}
             </ul>
-        </div>
-    );
-    return null
+            <Pagination totalPages={this.state.pages} pageNeighbors={2} onPageChanged={updateDataBound} />
+        </div>)
+    }
 };
 
-export default Home;
+export default withParams(Home);
