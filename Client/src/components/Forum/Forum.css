@@ -7,7 +7,7 @@ body {
     -moz-osx-font-smoothing: grayscale;
   }
 
-.category {
+.forum {
     width: auto;
     margin: 10px 20px;
     padding: 10px;
@@ -20,14 +20,14 @@ body {
     vertical-align: middle;
 }
 
-.category-icon {
+.forum-icon {
     height: 180px;
     width: 180px;
     display: block;
     float: left;
 }
 
-.category-icon img {
+.forum-icon img {
     height: 180px;
     width: 180px;
     border-radius: 100%;
@@ -35,7 +35,7 @@ body {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-.category-name {
+.forum-name {
     display: inline-block;
     margin: 10px 50px;
     padding: 0px 20px;
@@ -47,7 +47,40 @@ body {
     vertical-align: middle;
 }
 
-.category-name p {
+.forum-name p {
     display: inline;
     font-size: 24px;
 }
+
+.forum-counts {
+    width: auto;
+    height: auto;
+    float: right;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-top: 80px;
+    margin-right: 20px;
+    padding: 5px 20px;
+}
+
+.forum-counts p {
+    color: black;
+}
+
+.forum-creator {
+    display: block;
+    margin: 10px 50px;
+    margin: 80px 00px 0px 738px;
+    border-width: 1px;
+	border-style: solid;
+	border-color: #28547a;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    width: 1000px;
+    text-align: center;
+}
+
+.forum-creator p {
+    display: inline;
+    font-size: 16px;
+    color: black;
+}
+
