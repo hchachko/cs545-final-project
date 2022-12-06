@@ -5,7 +5,7 @@ import './Forum/Forum.css'
 import {useParams} from 'react-router-dom';
 
 import PostItem from './Forum/PostItem';
-import {getPosts} from './Forum/CommonAPI';
+import {getPosts, createPost} from './Forum/CommonAPI';
 
 import { AuthContext } from "../firebase/Auth";
 import Pagination from './Forum/Pagination';
@@ -15,56 +15,47 @@ function withParams(Component) {
 }
   
 
-// function PostForm({ cid }) {
+function PostForm({ tid, self, update }) {
     
-//     const { currentUser } = useContext(AuthContext);
-//     const [shown, setShown] = useState(false);
-//     let name, post;
+    const { currentUser } = useContext(AuthContext);
+    const [edit, setEdit] = useState(false);
+    const [inputVal, setVal] = useState("");
 
-//     const openForm = () => {
-//         setShown(current => !current);
-//     }
+    const submitPost = () => {
+        let postFunc = createPost;
+        postFunc({post: inputVal}, {tid: tid}, {user: currentUser}).then((value) => {
+            alert("successfully created post");
+            update({currentPage: self.page, totalPages: self.state.pages});
+            setVal("");
+        }, (reason) => {
+            alert(`Failed to create post: ${reason}`);
+        })
+    }
 
-//     const submitTopic = async () => {
-//         createTopic({name: name}, {post: post}, {cid: cid}, {user: currentUser}).then((value) => {
-//             alert("successfully created topic")
-//         }, (reason) => {
-//             alert(`Failed to create topic: ${reason}`)
-//         })
-//     }
+    const onChangePost = (event) => {
+        setVal(event.target.value);
+    }
 
-//     const onChangeName = (event) => {
-//         name = event.target.value
-//     }
-
-//     const onChangePost = (event) => {
-//         post = event.target.value
-//     }
-
-//     return (
-//         <div id="topicCreate">
-//             <button onClick={openForm}>Create Topic</button>
-//             {shown && (<form id="tform">
-//                 <label htmlFor="name">Topic Name:</label>
-//                 <input type="text" id="tname" name="name" onChange={onChangeName}></input><br />
-//                 <textarea name="post" id="tpost" rows="10" cols="155" placeholder="Enter post content here..." onChange={onChangePost}>
-//                 </textarea>
-//                 <div id="sep"></div>
-//                 <button id="tsubmit" onClick={submitTopic} type="button">Submit</button>
-//             </form>)}
-//         </div>
-//     )
-// }
+    return (
+        <div id="postCreate">
+            <form id="pform">
+                <textarea name="post" id="tpost" rows="10" cols="155" value={inputVal} placeholder="Enter post content here..." onChange={onChangePost} />
+                <div id="sep"></div>
+                <button id="psubmit" onClick={submitPost} type="button">Submit Post</button>
+            </form>
+        </div>
+    )
+}
 
 
-class Home extends Component () {
+class Home extends Component {
     constructor(props){
         super(props)
         const {tid, name} = this.props.params;
         this.tid = tid;
         this.name = name;
         this.page = 1;
-        this.state = {data: {posts: {}, category: ""}, pages: 1};
+        this.state = {data: {posts: {}, category: {name: ""}, tid: 0}, pages: 1};
     }
 
     updateData(page){
@@ -83,15 +74,16 @@ class Home extends Component () {
         return (
             <div>
                 <h1>Community</h1>
-                <h2>Welcome to the community board for {this.state.data.category.name.replaceAll("-"," ")}</h2>
+                <h2>Welcome to the community board for {this.state.data.category.name}</h2>
                 <h3>You're looking at the thread - {this.name.replaceAll("-", " ")}</h3>
                 <ul>
-                    {Object.keys(this.state.data.posts).map((key, i) => <PostItem key={`${this.state.data.category.name}-${this.name}-post-${i}`} data={this.data} dkey={key}/>)}
+                    {Object.keys(this.state.data.posts).map((key, i) => <PostItem key={`${this.state.data.category.name}-${this.name}-post-${i}`} data={this.state.data} dkey={key}/>)}
                 </ul>
+                <PostForm tid={this.state.data.tid} self={this} update={updateDataBound}/>
                 <Pagination totalPages={this.state.pages} pageNeighbors={2} onPageChanged={updateDataBound} />
             </div>
         );
     }
 };
 
-export default Home;
+export default withParams(Home);
