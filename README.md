@@ -3,7 +3,7 @@
 
 1) Have mongodb running (either manually or as a background process).
 
-&emsp; Set up nodebb. If Nodebb already set up, only run steps 3 and 5, then go to step 14
+&emsp; Set up nodebb. If Nodebb already set up, only run steps 3 and 5, then go to step 22
 
 2) Run "git clone -b v2.x https://github.com/NodeBB/NodeBB.git nodebb"
 
