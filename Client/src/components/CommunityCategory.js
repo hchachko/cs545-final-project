@@ -12,7 +12,7 @@ import { AuthContext } from "../firebase/Auth";
 
 function withParams(Component) {
     return props => <Component {...props} params={useParams()} />;
-  }
+}
   
 
 function TopicForm({ cid }) {
@@ -60,25 +60,23 @@ class Home extends Component {
     constructor(props) {
         super(props);
         const {cid, name} = this.props.params;
-        this.cid = cid
-        this.name = name
-        this.page = 1
+        this.cid = cid;
+        this.name = name;
+        this.page = 1;
         this.state = {data: {topics: {}}, pages: 1};
     }
     updateData(page){
-        console.log(page)
         getTopics({cid: this.cid}, {name: this.name}, {page: page.currentPage}).then(result => {
             this.setState({data: result, pages: result.pagination.last.page});
         })
     }
 
     componentDidMount(){
-        this.setState({data: {topics: {}}, pages: 1});
-        this.updateData({currentPage: this.page, totalPages: this.state.pages})
+        this.updateData({currentPage: this.page, totalPages: this.state.pages});
     }
 
     render(){
-        let updateDataBound = this.updateData.bind(this)
+        let updateDataBound = this.updateData.bind(this);
         return (
         <div>
             <h1>Community</h1>

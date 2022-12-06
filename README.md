@@ -42,29 +42,33 @@
 
 16) Hit the Save icon in the bottom left. 
 
-17) If it doesn't already exist, create a .secrets file in the Client Directory
+17) Search for "Paginate topics and posts" 
 
-18) In .secrets, place REACT_APP_NODEBB_MASTER_TOKEN="token", replacing token with the newly generated token. Copy .secrets to the Server directory
+18) Toggle the setting to on
 
-19) Close the NodeBB config page
+19) If it doesn't already exist, create a .secrets file in the Client Directory
 
-&emsp; In a seperate console window:
+20) In .secrets, place REACT_APP_NODEBB_MASTER_TOKEN="token", replacing token with the newly generated token. Copy .secrets to the Server directory
 
-20) cd to the "Server" directory.
-
-21) Run "npm install" to install the dependicies needed for the backend.
-
-22) Run "npm run seed". This will populate the mongo server with seed data.
-
-23) Run "npm start" to start the backend server on port 4000. 
+21) Close the NodeBB config page
 
 &emsp; In a seperate console window:
 
-24) cd to the "Client" directory.
+22) cd to the "Server" directory.
 
-25) Run "npm install" to install the dependicies needed for the frontend.
+23) Run "npm install" to install the dependicies needed for the backend.
 
-26) Run "npm start" to start the frontend on port 3000. 
+24) Run "npm run seed". This will populate the mongo server with seed data.
+
+25) Run "npm start" to start the backend server on port 4000. 
+
+&emsp; In a seperate console window:
+
+26) cd to the "Client" directory.
+
+27) Run "npm install" to install the dependicies needed for the frontend.
+
+28) Run "npm start" to start the frontend on port 3000. 
 
 **It is crucial to run both the backend and the frontend at the same time for the site to function properly!**
 
