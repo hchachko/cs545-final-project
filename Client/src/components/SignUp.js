@@ -32,7 +32,7 @@ function SignUp() {
   }
 
   return (
-    <div>
+    <div className="card">
       <h1>Sign up</h1>
       {pwMatch && <h4 className="error">{pwMatch}</h4>}
       <form onSubmit={handleSignUp}>
@@ -87,7 +87,12 @@ function SignUp() {
             />
           </label>
         </div>
-        <button id="submitButton" name="submitButton" type="submit">
+        <button
+          id="submitButton"
+          name="submitButton"
+          className="button"
+          type="submit"
+        >
           Sign Up
         </button>
       </form>
