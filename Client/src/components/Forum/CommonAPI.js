@@ -94,7 +94,6 @@ export const createPost = async ({ post }, { tid }, { user }) => {
         headers: auth,
         data: {
             _uid: bbuser.uid,
-            tid: tid,
             content: post,
             timestamp: new Date().getTime(),
             toPid: 0,
