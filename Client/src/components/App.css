@@ -20,7 +20,7 @@
 
 .App-header {
 	background-color: #28547a;
-	height: 150px;
+	height: 10%;
 	padding: 20px;
 	color: #222;
 	position: relative;
@@ -91,6 +91,7 @@ nav {
 	border-radius: 3px;
 	color: white;
 	text-decoration: none !important;
+	border: 1px solid black
 }
 .buttonAccount {
 	padding: 0.4rem .8rem;
