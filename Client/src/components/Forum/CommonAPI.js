@@ -65,7 +65,6 @@ export const getOrCreateUser = async ({ username }, { email }) => {
 }
 
 export const createTopic = async ({ name }, { post }, { cid }, { user }) => {
-    console.log(user._delegate.displayName)
     const bbuser = await getOrCreateUser({username: user._delegate.displayName}, {email: user._delegate.email});
     const res = await axios.request({
         url: baseURL + "/api/v3/topics/",
@@ -77,6 +76,28 @@ export const createTopic = async ({ name }, { post }, { cid }, { user }) => {
             title: name,
             content: post,
             tags: ["content"]
+        },
+        validateStatus: (num) => {
+            return true;
+        }
+    });
+    if(res.status != 200){
+        throw new axios.AxiosError(res.data.status.message)
+    }
+}
+
+export const createPost = async ({ post }, { tid }, { user }) => {
+    const bbuser = await getOrCreateUser({username: user._delegate.displayName}, {email: user._delegate.email});
+    const res = await axios.request({
+        url: baseURL + "/api/v3/topics/" + tid,
+        method: "POST",
+        headers: auth,
+        data: {
+            _uid: bbuser.uid,
+            tid: tid,
+            content: post,
+            timestamp: new Date().getTime(),
+            toPid: 0,
         },
         validateStatus: (num) => {
             return true;

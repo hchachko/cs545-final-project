@@ -15,30 +15,34 @@ function withParams(Component) {
 }
   
 
-function TopicForm({ cid }) {
+function TopicForm({ cid, self, update }) {
     
     const { currentUser } = useContext(AuthContext);
     const [shown, setShown] = useState(false);
-    let name, post;
+    const [inputVal, setInpVal] = useState("");
+    const [nameVal, setNamVal] = useState("");
 
     const openForm = () => {
         setShown(current => !current);
     }
 
-    const submitTopic = async () => {
-        createTopic({name: name}, {post: post}, {cid: cid}, {user: currentUser}).then((value) => {
-            alert("successfully created topic")
+    const submitTopic = () => {
+        createTopic({name: nameVal}, {post: inputVal}, {cid: cid}, {user: currentUser}).then((value) => {
+            alert("successfully created topic");
+            update({currentPage: self.page, totalPages: self.state.pages});
+            setInpVal("");
+            setNamVal("");
         }, (reason) => {
             alert(`Failed to create topic: ${reason}`)
         })
     }
 
     const onChangeName = (event) => {
-        name = event.target.value
+        setNamVal(event.target.value);
     }
 
     const onChangePost = (event) => {
-        post = event.target.value
+        setInpVal(event.target.value);
     }
 
     return (
@@ -46,8 +50,8 @@ function TopicForm({ cid }) {
             <button onClick={openForm}>Create Topic</button>
             {shown && (<form id="tform">
                 <label htmlFor="name">Topic Name:</label>
-                <input type="text" id="tname" name="name" onChange={onChangeName}></input><br />
-                <textarea name="post" id="tpost" rows="10" cols="155" placeholder="Enter post content here..." onChange={onChangePost}>
+                <input type="text" id="tname" name="name" value={nameVal} onChange={onChangeName}></input><br />
+                <textarea name="post" id="tpost" rows="10" cols="155" value={inputVal} placeholder="Enter post content here..." onChange={onChangePost}>
                 </textarea>
                 <div id="sep"></div>
                 <button id="tsubmit" onClick={submitTopic} type="button">Submit</button>
@@ -81,7 +85,7 @@ class Home extends Component {
         <div>
             <h1>Community</h1>
             <h2>Welcome to the community board for {this.name.replaceAll("-", " ")}</h2>
-            <TopicForm cid={this.cid}></TopicForm>
+            <TopicForm cid={this.cid} self={this} update={updateDataBound}></TopicForm>
             <ul>
                 {Object.keys(this.state.data.topics).map((key, i) => <TopicItem key={`${this.name}-topic-${i}`} data={this.state.data} dkey={key}/>)}
             </ul>
