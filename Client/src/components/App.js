@@ -4,6 +4,8 @@ import Home from "./Home";
 import Parks from "./Parks";
 import ParkPage from "./ParkPage";
 import Community from "./Community";
+import CommunityCategory from './CommunityCategory';
+import CommunityTopic from './CommunityTopic';
 import Help from "./Help";
 import SignIn from "./SignIn";
 import Account from "./Account";
@@ -34,6 +36,12 @@ function App() {
               </Route>
               <Route path="/community" element={<PrivateRoute />}>
                 <Route path="/community" element={<Community />} />
+              </Route>
+              <Route path="/community/category/:cid/:name" element={<PrivateRoute />}>
+                <Route path="/community/category/:cid/:name" element={<CommunityCategory />} />
+              </Route>
+              <Route path="/community/topic/:tid/:name" element={<PrivateRoute />}>
+                <Route path="/community/topic/:tid/:name" element={<CommunityTopic />} />
               </Route>
               <Route path="/parks" element={<PrivateRoute />}>
                 <Route path="/parks" element={<Parks />} />
