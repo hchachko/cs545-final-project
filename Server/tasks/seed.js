@@ -5,7 +5,7 @@ console.log(data);
 
 let { ObjectId } = require('mongodb');
 async function main() {
-    const db = await dbConnection.dbConnection();
+
     await db.dropDatabase();
     //SCHEMA: (parkName, parkImg, parkDesc)
     await parks.addPark("Church Square Park","https://www.hobokengirl.com/wp-content/uploads/2021/07/Church-Square-Park.png", "400 Garden St, Hoboken, NJ 07030");
