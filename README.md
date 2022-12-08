@@ -13,7 +13,7 @@
     - Hit "Enter" Twice to select the default URL and secret
     - Decide whether to send anonymous plugin usage
     - Hit "Enter" to select mongo as nodebb database
-    - Type modgodb://127.0.0.1:27017 and hit "Enter"
+    - Type mongodb://127.0.0.1:27017 and hit "Enter"
     - If prompted, create a NodeBB admin username and password. Remember these
 
 5) run "./nodebb start"
