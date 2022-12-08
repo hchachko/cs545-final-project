@@ -4,8 +4,9 @@ import { Grid } from "@mui/material";
 import hobokenMap from "./Images/hobokenMap.png";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import { MapContainer } from "./Home";
-function Home() {
+import { MapContainer, Example } from "./Home";
+
+export function Home() {
   const [parksData, setParksData] = useState(undefined);
   const [formData, setFormData] = useState({ searchTerm: "" });
   let parks;
