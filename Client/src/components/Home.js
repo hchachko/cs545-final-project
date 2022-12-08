@@ -6,8 +6,11 @@ import {
   Link,
   Routes,
   useLocation,
+  useNavigate,
 } from "react-router-dom";
-import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
+import { GoogleMap, LoadScript, Marker, InfoWindow } from "@react-google-maps/api";
+import {Home as Home1, MarkerChange} from "./Parks";
+import axios from 'axios';
 
 export const MapContainer = () => {
   const mapStyles = {
@@ -23,48 +26,94 @@ export const MapContainer = () => {
 
   const locations = [
     {
-      name: "Location 1",
+      name: "Church Square Park",
       location: {
-        lat: 40.74208727387333,
-        lng: -74.0255355834961,
+        lat: 40.74163202555151,
+        lng: -74.03163715767018,
       },
+      nav: "63911ffc1287c38f1a7bfa6a"
     },
     {
-      name: "Location 2",
+      name: "Elysian Park",
       location: {
-        lat: 40.74953279908402,
-        lng: -74.0235185623169,
+        lat: 40.748581442333375,
+        lng: -74.02547803954761,
       },
+      nav: "63911ffc1287c38f1a7bfa6b"
     },
     {
-      name: "Location 3",
+      name: "Harborside Park",
       location: {
-        lat: 40.74220107638279,
-        lng: -74.0323805809021,
+        lat: 40.755212949764626,
+        lng: -74.02781271497959,
       },
+      nav: "63911ffc1287c38f1a7bfa6c"
     },
     {
-      name: "Location 4",
+      name: "Maxwell Park",
       location: {
-        lat: 40.748524938340324,
-        lng: -74.0328311920166,
+        lat: 40.74963632481432,
+        lng: -74.02348654381474,
       },
+      nav: "63911ffc1287c38f1a7bfa6d"
     },
     {
-      name: "Location 5",
+      name: "1600 Park",
       location: {
-        lat: 40.755043251432696,
-        lng: -74.02785301208496,
+        lat: 40.75645317360369,
+        lng: -74.02870650148478,
       },
+      nav: "63911ffc1287c38f1a7bfa6e"
+    },
+    {
+      name: "Southwest Park",
+      location: {
+        lat: 40.73799585251592,
+        lng: -74.04200034381495,
+      },
+      nav: "63911ffc1287c38f1a7bfa6f"
+    },
+    {
+      name: "Stevens Park",
+      location: {
+        lat: 40.7415857135842,
+        lng: -74.02760137265004,
+      },
+      nav: "63911ffc1287c38f1a7bfa70"
+    },
+    {
+      name: "Viaduct Park",
+      location: {
+        lat: 40.75482838744374,
+        lng: -74.03448377264965,
+      },
+      nav: "63911ffc1287c38f1a7bfa71"
     },
   ];
-
+  const history = useNavigate();
+  const [ selected, setSelected ] = useState({});
+  
+  const onSelect = item => {
+    setSelected(item);
+  }
   return (
     <LoadScript googleMapsApiKey="AIzaSyCQthEONVTOZqufhHSlzCRIGSDuVwXDIVk">
       <GoogleMap mapContainerStyle={mapStyles} zoom={15} center={defaultCenter}>
         {locations.map((item) => {
-          return <Marker key={item.name} position={item.location} />;
+          return <Marker key={item.name} position={item.location} clickable={true} onClick={() => history("/parks/" + item.nav)} onMouseOver={() => onSelect(item)}/>;
         })}
+        {
+            selected.location && 
+            (
+              <InfoWindow
+              position={selected.location}
+              clickable={true}
+              onCloseClick={() => setSelected({})}
+            >
+              <p>{selected.name}</p>
+            </InfoWindow>
+            )
+         }
       </GoogleMap>
     </LoadScript>
   );
