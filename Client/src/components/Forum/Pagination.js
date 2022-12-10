@@ -1,3 +1,8 @@
+/**
+This file, with minor modifications for compatibility with this codebase, was sourced from
+https://www.digitalocean.com/community/tutorials/how-to-build-custom-pagination-with-react
+*/
+
 import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 
