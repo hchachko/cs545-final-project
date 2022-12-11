@@ -66,7 +66,7 @@
 
 26) cd to the "Client" directory.
 
-27) Run "npm install" to install the dependicies needed for the frontend.
+27) Run "npm install --legacy-peer-deps" to install the dependicies needed for the frontend.
 
 28) Run "npm start" to start the frontend on port 3000. 
 
