@@ -58,7 +58,7 @@
 
 23) Run "npm install" to install the dependicies needed for the backend.
 
-24) Run "npm run seed". This will populate the mongo server with seed data.
+24) Run "npm run setup". This will populate the mongo server with seed data.
 
 25) Run "npm start" to start the backend server on port 4000. 
 
