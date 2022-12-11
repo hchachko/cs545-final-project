@@ -21,8 +21,12 @@ import {
   Routes,
 } from "react-router-dom";
 import { AuthProvider } from "../firebase/Auth";
+import { useEffect } from 'react'
 
 function App() {
+  useEffect(() => {
+    document.title = "Hoboken Parks Portal";
+  });
   return (
     <AuthProvider>
       <Router>

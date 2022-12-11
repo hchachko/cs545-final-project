@@ -57,7 +57,7 @@ export function Home() {
             <br />
             <h3>List of Parks:</h3>
             <div>
-              <label>Filter by name:</label>
+              <label for="searchTerm">Filter by name:</label>
               <br />
               <input
                 onChange={(e) => handleChange(e)}
