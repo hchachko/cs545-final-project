@@ -43,7 +43,7 @@ body {
 	border-style: solid;
 	border-color: #28547a;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    width: 1000px;
+    width: 50%;
     vertical-align: middle;
 }
 
@@ -57,9 +57,9 @@ body {
     height: auto;
     float: right;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    margin-top: 80px;
     margin-right: 20px;
     padding: 5px 20px;
+    margin-top: 20px;
 }
 
 .forum-counts p {
@@ -74,7 +74,7 @@ body {
 	border-style: solid;
 	border-color: #28547a;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    width: 1000px;
+    width: 50%;
     text-align: center;
 }
 
