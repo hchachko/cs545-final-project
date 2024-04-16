@@ -1,4 +1,27 @@
-node_modules
-package-lock.json
-nodebb
-.secrets
+CQL Work
+.vscode
+CSGames
+*.zip
+dolly.wmv
+Competitve Programming/
+data.obj
+CS559/HW1/Dataset/
+*/__pycache__/
+CS496/PLaF/
+CS496/PLaF
+*.jpg
+*.pkl
+*/*/.metadata/
+__MACOSX/
+.DS_Store
+__pycache__/
+*/*/.venv
+*.RData
+*.json
+*.pickle
+_build/
+CS589/HW2/python/python_qid2all.txt
+CS584/HW2/a2-data/word2vec_train_file.txt
+CS589/HW2/curl.log
+CS589/HW2/java/java_qid2all.txt
+CS589/HW2/javascript/javascript_qid2all.txt

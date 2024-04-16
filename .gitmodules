@@ -1,0 +1,3 @@
+[submodule "nodebb"]
+	path = "nodebb"
+	url = https://github.com/NodeBB/NodeBB
