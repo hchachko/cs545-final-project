@@ -20,6 +20,7 @@ __pycache__/
 *.json
 *.pickle
 _build/
+.secrets
 CS589/HW2/python/python_qid2all.txt
 CS584/HW2/a2-data/word2vec_train_file.txt
 CS589/HW2/curl.log
